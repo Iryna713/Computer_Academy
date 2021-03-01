@@ -12,6 +12,7 @@ h3,
 h4,
 h5,
 h6,
+p,
 img,
 footer,
 main,
@@ -32,6 +33,29 @@ button {
   outline: none;
 }
 
+@font-face {
+  font-family: "SFUIDisplay-Bold";
+  src: url(../fonts/SFUIDisplay-Bold.woff) format("woff"), url(../fonts/SFUIDisplay-Bold.woff2) format("woff2");
+  font-style: normal;
+}
+@font-face {
+  font-family: "SFUIDisplay-Regular";
+  src: url(../fonts/SFUIDisplay-Regular.woff) format("woff"), url(../fonts/SFUIDisplay-Regular.woff2) format("woff2");
+  font-style: normal;
+}
+@font-face {
+  font-family: "SFUIDisplay-Thin";
+  src: url(../fonts/SFUIDisplay-Thin.woff) format("woff"), url(../fonts/SFUIDisplay-Thin.woff2) format("woff2");
+  font-style: normal;
+}
+@font-face {
+  font-family: "SFUIDisplay-Ultralight";
+  src: url(../fonts/SFUIDisplay-Ultralight.woff) format("woff"), url(../fonts/SFUIDisplay-Ultralight.woff2) format("woff2");
+  font-style: normal;
+}
+.header {
+  font-family: "SFUIDisplay-Regular", sans-serif;
+}
 .header__wrapper {
   width: 980px;
   margin: 0 auto;
@@ -140,7 +164,7 @@ button {
   line-height: 18px;
 }
 .nav__section .nav__link {
-  margin: 0 36px;
+  margin: 0 31px;
 }
 .nav__select {
   width: 180px;
@@ -149,7 +173,53 @@ button {
   outline: none;
   background: #2B2B2B;
   color: #fff;
+  font-family: "SFUIDisplay-Regular", sans-serif;
   text-align: center;
+}
+
+.title {
+  height: 635px;
+  padding-top: 91px;
+  background-image: url(../images/background.png);
+  color: #fff;
+}
+.title__wrapper {
+  width: 980px;
+  margin: 0 auto;
+}
+.title__header {
+  text-transform: uppercase;
+  font-family: "SFUIDisplay-Bold";
+  font-size: 50px;
+  line-height: 60px;
+}
+.title__subtitle {
+  font-family: "SFUIDisplay-Ultralight";
+  font-size: 50px;
+  line-height: 60px;
+}
+.title__description {
+  display: flex;
+  font-family: "SFUIDisplay-Thin";
+  font-size: 18px;
+  line-height: 22px;
+  margin: 20px 0;
+}
+.title__line {
+  width: 3px;
+  height: 85px;
+  background: #27C5DC;
+  border-radius: 10px;
+  margin-right: 30px;
+}
+.title__criteria {
+  display: flex;
+  font-family: "SFUIDisplay-Thin";
+  font-size: 18px;
+  line-height: 22px;
+}
+.title__icon {
+  margin-right: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,5 +1,16 @@
 @mixin linksText {
-  color: #fff;
+  color: $white;
   font-size: 15px;
   line-height: 18px;
+}
+
+@mixin titleText {
+  font-size: 50px;
+  line-height: 60px;
+}
+
+@mixin text {
+  font-family: "SFUIDisplay-Thin";
+  font-size: 18px;
+  line-height: 22px;
 }

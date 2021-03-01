@@ -1,0 +1,45 @@
+.title {
+  height: 635px;
+  padding-top: 91px;
+  background-image: url(../images/background.png);
+  color: $white;
+
+  &__wrapper {
+    width: 980px;
+    margin: 0 auto;
+  }
+
+  &__header {
+    text-transform: uppercase;
+    font-family: "SFUIDisplay-Bold";
+    @include titleText;
+  }
+
+  &__subtitle {
+    font-family: "SFUIDisplay-Ultralight";
+    @include titleText;
+  }
+  
+  &__description {
+    display: flex;
+    @include text;
+    margin: 20px 0;
+  }
+
+  &__line {
+    width: 3px;
+    height: 85px;
+    background: $biruz;
+    border-radius: 10px;
+    margin-right: 30px;
+  }
+
+  &__criteria {
+    display: flex;
+    @include text;
+  }
+
+  &__icon {
+    margin-right: 20px;
+  }
+}
