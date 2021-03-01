@@ -1,0 +1,105 @@
+@import "reset";
+
+// font-family: SF UI Display; // download font
+
+
+.header {
+  &__top {
+    height: 100px;
+    width: 980px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__bcg {
+    &-first {
+      position: absolute;
+      left: 0;
+      z-index: -1;
+    }
+
+    &-second {
+      position: absolute;
+      left: 0;
+      z-index: -1;
+    }
+  }
+
+  &__logo {
+    height: 71px;
+    width: 68px;
+  }
+
+  &__contact {
+    align-self: flex-end;
+    display: grid;
+    grid-gap: 11px 27px;
+    grid-template-areas:
+      "number btn"
+      "lang btn";
+      grid-template-rows: 31px 26px;
+  }
+
+  &__number {
+    grid-area: number;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: right;
+    color: #000;
+    height: 31px;
+  }
+
+  &__languages {
+    grid-area: lang;
+    display: grid;
+    grid-template-columns: repeat(14, max-content);
+    grid-gap: 12px;
+  }
+
+  &__lang {
+    color: #c1c1c1;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: right;
+    position: relative;
+
+    &-active {
+      color: #000;
+    }
+
+    &-active::after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: -8px;
+      width: 100%;
+      height: 3px;
+      background: #27c5dc;
+    }
+  }
+
+  &__btn {
+    grid-area: btn;
+    position: relative;
+  }
+  
+  &__span {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 0em;
+    color: #fff;
+    text-align: center;
+  }
+}
