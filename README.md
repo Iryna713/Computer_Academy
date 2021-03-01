@@ -12,6 +12,8 @@ The design 1600px
 Notebook 1280px
 Tablet 1024
 Mobile (> 320px)
+
+
 Tech stack:
 
 HTML5, SASS(SCSS) JavaScript Pixel-perfect, BEM, Cross-browser and adaptive layout, Git
