@@ -222,4 +222,79 @@ button {
   margin-right: 20px;
 }
 
+.appeal {
+  position: relative;
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+}
+.appeal__text {
+  text-align: center;
+  font-family: "SFUIDisplay-Thin";
+  font-size: 18px;
+  line-height: 22px;
+  font-family: "SFUIDisplay-Regular";
+}
+.appeal__btn {
+  margin-top: 30px;
+  width: 203px;
+  height: 51px;
+  border: 2px solid #0A6DC9;
+  border-radius: 10px;
+  background: transparent;
+  font-family: "SFUIDisplay-Bold";
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+}
+.appeal__bcg-first {
+  position: absolute;
+  left: 0;
+  top: -265px;
+  z-index: -1;
+}
+.appeal__bcg-second {
+  position: absolute;
+  right: 0;
+  top: -245px;
+  z-index: -1;
+}
+
+.proposal__wrapper {
+  width: max-content;
+  margin: 0 auto;
+}
+.proposal__header {
+  margin-bottom: 50px;
+  font-family: "SFUIDisplay-Bold";
+  font-size: 36px;
+  line-height: 43px;
+  text-transform: uppercase;
+  color: #000;
+}
+.proposal__catalog {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  width: 466px;
+  height: 367px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  text-align: center;
+  font-family: "SFUIDisplay-Thin";
+  font-size: 18px;
+  line-height: 22px;
+  font-family: "SFUIDisplay-Regular";
+}
+.card img {
+  margin-bottom: 20px;
+}
+
 /*# sourceMappingURL=style.css.map */

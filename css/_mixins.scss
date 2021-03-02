@@ -14,3 +14,11 @@
   font-size: 18px;
   line-height: 22px;
 }
+
+@mixin headersText {
+  font-family: "SFUIDisplay-Bold";
+  font-size: 36px;
+  line-height: 43px;
+  text-transform: uppercase;
+  color: $black;
+}
