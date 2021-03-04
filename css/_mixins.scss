@@ -22,3 +22,8 @@
   text-transform: uppercase;
   color: $black;
 }
+
+@mixin wrapper {
+  max-width: 1440px;
+  margin: 0 auto 130px;
+}

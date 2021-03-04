@@ -1,0 +1,63 @@
+.main__consulting {
+  margin: 0 auto;
+}
+
+.consulting {
+  max-width: 2000px;
+  position: relative;
+  
+  &__wrapper {
+    @include wrapper;
+    margin-bottom: 140px;
+    height: 647px;
+  }
+
+  &__header {
+    margin-bottom: 40px;
+    @include headersText;
+  }
+
+  &__image {
+    &-first {
+      position: absolute;
+      left: 0;
+    }
+
+    &-second {
+      position: absolute;
+      right: 1015px;
+      top: 196px;
+      z-index: -1;
+    }
+
+    &-third {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 1109px;
+      height: 647px;
+    }
+  }
+
+  &__content {
+    width: 519px;
+    margin-left: 66px;
+  }
+
+  &__text {
+    width: 503px;
+    @include text;
+    font-family: "SFUIDisplay-Regular";
+  }
+
+  &__btn {
+    margin: 40px 0px;
+    width: 318px;
+    height: 51px;
+    background: $blue;
+    border-radius: 10px;
+    color: $white;
+    @include text;
+    font-family: "SFUIDisplay-Bold";
+  }
+}

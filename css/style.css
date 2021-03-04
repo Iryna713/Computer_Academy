@@ -31,6 +31,7 @@ a {
 
 button {
   outline: none;
+  cursor: pointer;
 }
 
 @font-face {
@@ -265,7 +266,7 @@ button {
 
 .proposal__wrapper {
   width: max-content;
-  margin: 0 auto;
+  margin: 0 auto 130px;
 }
 .proposal__header {
   margin-bottom: 50px;
@@ -279,8 +280,7 @@ button {
   display: flex;
   gap: 20px;
 }
-
-.card {
+.proposal__card {
   width: 466px;
   height: 367px;
   display: flex;
@@ -293,8 +293,233 @@ button {
   line-height: 22px;
   font-family: "SFUIDisplay-Regular";
 }
-.card img {
+.proposal__card img {
   margin-bottom: 20px;
+}
+
+.program {
+  font-family: "SFUIDisplay-Thin";
+  font-size: 18px;
+  line-height: 22px;
+  font-family: "SFUIDisplay-Bold";
+  position: relative;
+}
+.program__wrapper {
+  max-width: 1440px;
+  margin: 0 auto 130px;
+}
+.program__bcg {
+  position: absolute;
+  right: 0;
+  top: 70px;
+  transform: rotate(-3.43deg);
+}
+.program__header {
+  margin-bottom: 50px;
+  font-family: "SFUIDisplay-Bold";
+  font-size: 36px;
+  line-height: 43px;
+  text-transform: uppercase;
+  color: #000;
+}
+.program__catalog {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.program__card {
+  width: 710px;
+  height: 361px;
+  position: relative;
+}
+.program__image {
+  width: 710px;
+  height: 284px;
+}
+.program__age {
+  display: block;
+  width: 146px;
+  height: 57px;
+  line-height: 57px;
+  position: absolute;
+  right: 0;
+  top: 45px;
+  background: #fff;
+  border-radius: 10px 0px 0px 10px;
+  text-align: center;
+}
+.program__text {
+  width: 709px;
+  height: 77px;
+  line-height: 77px;
+  background: #F2F6F9;
+  border-radius: 0px 0px 30px 30px;
+  position: relative;
+  padding: 0 37px;
+}
+.program__link {
+  display: block;
+  width: 90px;
+  height: 77px;
+  background: #0066C5;
+  border-radius: 0px 0px 30px 0px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.program__link img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.advantages__wrapper {
+  max-width: 1440px;
+  margin: 0 auto 130px;
+}
+.advantages__header {
+  margin-bottom: 50px;
+  font-family: "SFUIDisplay-Bold";
+  font-size: 36px;
+  line-height: 43px;
+  text-transform: uppercase;
+  color: #000;
+}
+.advantages__catalog {
+  width: 1440px;
+  height: 178px;
+  display: flex;
+  justify-content: space-between;
+}
+.advantages__line {
+  width: 3px;
+  height: 178px;
+  background: #f2f6f9;
+}
+.advantages__card {
+  width: 344px;
+  height: 178px;
+  position: relative;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+}
+.advantages__card img {
+  width: 130px;
+  height: 120px;
+}
+.advantages__text {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+}
+
+.main__consulting {
+  margin: 0 auto;
+}
+
+.consulting {
+  max-width: 2000px;
+  position: relative;
+}
+.consulting__wrapper {
+  max-width: 1440px;
+  margin: 0 auto 130px;
+  margin-bottom: 140px;
+  height: 647px;
+}
+.consulting__header {
+  margin-bottom: 40px;
+  font-family: "SFUIDisplay-Bold";
+  font-size: 36px;
+  line-height: 43px;
+  text-transform: uppercase;
+  color: #000;
+}
+.consulting__image-first {
+  position: absolute;
+  left: 0;
+}
+.consulting__image-second {
+  position: absolute;
+  right: 1015px;
+  top: 196px;
+  z-index: -1;
+}
+.consulting__image-third {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1109px;
+  height: 647px;
+}
+.consulting__content {
+  width: 519px;
+  margin-left: 66px;
+}
+.consulting__text {
+  width: 503px;
+  font-family: "SFUIDisplay-Thin";
+  font-size: 18px;
+  line-height: 22px;
+  font-family: "SFUIDisplay-Regular";
+}
+.consulting__btn {
+  margin: 40px 0px;
+  width: 318px;
+  height: 51px;
+  background: #0066C5;
+  border-radius: 10px;
+  color: #fff;
+  font-family: "SFUIDisplay-Thin";
+  font-size: 18px;
+  line-height: 22px;
+  font-family: "SFUIDisplay-Bold";
+}
+
+.footer {
+  height: 178px;
+  padding: 18px;
+  background: #000;
+}
+.footer__text {
+  margin-bottom: 17px;
+  font-family: "SFUIDisplay-Thin";
+  font-size: 18px;
+  line-height: 22px;
+  font-family: "SFUIDisplay-Bold";
+  color: #fff;
+  text-align: center;
+}
+.footer__links {
+  margin: 0 auto 25px;
+  width: 155px;
+  display: flex;
+  justify-content: space-between;
+}
+.footer__link {
+  width: 42px;
+  height: 42px;
+  position: relative;
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+.footer__link-first {
+  border-color: #27C5DC;
+}
+.footer__link img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.footer__copyright {
+  font-family: "SFUIDisplay-Regular";
+  font-size: 11px;
+  line-height: 13px;
+  text-align: center;
+  color: #fff;
 }
 
 /*# sourceMappingURL=style.css.map */
