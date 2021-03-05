@@ -1,0 +1,47 @@
+.footer {
+  height: 178px;
+  padding: 18px;
+  background: $black;
+
+  &__text {
+    margin-bottom: 17px;
+    @include text;
+    font-family: "SFUIDisplay-Bold";
+    color: $white;
+    text-align: center;
+  }
+
+  &__links {
+    margin: 0 auto 25px;
+    width: 155px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__link {
+    width: 42px;
+    height: 42px;
+    position: relative;
+    border: 1px solid $white;
+    border-radius: 50%;
+
+    &-first {
+      border-color: $biruz;
+    }
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__copyright {
+    font-family: "SFUIDisplay-Regular";
+    font-size: 11px;
+    line-height: 13px;
+    text-align: center;
+    color: $white;
+  }
+}

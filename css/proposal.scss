@@ -1,0 +1,41 @@
+.proposal {
+
+  &__wrapper {
+    @include wrapper;
+  }
+
+  &__header {
+    margin-bottom: 50px;
+    @include headersText;
+
+    @media screen and (max-width: 1469px) {
+      text-align: center;
+    }
+  }
+
+  &__catalog {
+    display: flex;
+    gap: 20px;
+
+    @media screen and (max-width: 1469px) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  &__card {
+    width: 466px;
+    height: 367px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    text-align: center;
+    @include text;
+    font-family: "SFUIDisplay-Regular";
+  
+    img {
+      margin-bottom: 20px;
+    }
+  }
+}

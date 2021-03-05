@@ -1,0 +1,829 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+a,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+img,
+footer,
+main,
+header {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button, select {
+  outline: none;
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: "SFUIDisplay-Bold";
+  src: url(../fonts/SFUIDisplay-Bold.woff) format("woff"), url(../fonts/SFUIDisplay-Bold.woff2) format("woff2");
+  font-style: normal;
+}
+@font-face {
+  font-family: "SFUIDisplay-Regular";
+  src: url(../fonts/SFUIDisplay-Regular.woff) format("woff"), url(../fonts/SFUIDisplay-Regular.woff2) format("woff2");
+  font-style: normal;
+}
+@font-face {
+  font-family: "SFUIDisplay-Thin";
+  src: url(../fonts/SFUIDisplay-Thin.woff) format("woff"), url(../fonts/SFUIDisplay-Thin.woff2) format("woff2");
+  font-style: normal;
+}
+@font-face {
+  font-family: "SFUIDisplay-Ultralight";
+  src: url(../fonts/SFUIDisplay-Ultralight.woff) format("woff"), url(../fonts/SFUIDisplay-Ultralight.woff2) format("woff2");
+  font-style: normal;
+}
+.header {
+  font-family: "SFUIDisplay-Regular", sans-serif;
+}
+.header__wrapper {
+  max-width: 980px;
+  padding: 15px 0 0 15px;
+  margin: 0 auto;
+  height: 100px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__langSelector {
+  display: none;
+  width: 50px;
+  justify-self: end;
+  border: 1px solid #2b2b2b;
+}
+@media screen and (max-width: 980px) {
+  .header__langSelector {
+    display: block;
+  }
+}
+.header__bcg-first {
+  position: absolute;
+  left: 0;
+  z-index: -1;
+}
+.header__bcg-second {
+  position: absolute;
+  left: 19px;
+  z-index: -1;
+}
+.header__logo {
+  height: 71px;
+  width: 68px;
+}
+.header__contact {
+  align-self: flex-end;
+  display: grid;
+  grid-gap: 11px 27px;
+  grid-template-areas: "number btn" "lang btn";
+  grid-template-rows: 31px 26px;
+}
+.header__number {
+  grid-area: number;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: right;
+  color: #000;
+  height: 31px;
+}
+@media screen and (max-width: 768px) {
+  .header__number {
+    font-size: 18px;
+  }
+}
+.header__languages {
+  grid-area: lang;
+  display: grid;
+  grid-template-columns: repeat(14, max-content);
+  grid-gap: 12px;
+}
+@media screen and (max-width: 980px) {
+  .header__languages {
+    display: none;
+  }
+}
+.header__lang {
+  color: #fff;
+  font-size: 15px;
+  line-height: 18px;
+  color: #c1c1c1;
+  text-transform: uppercase;
+  text-align: right;
+  position: relative;
+}
+.header__lang-active {
+  color: #000;
+}
+.header__lang-active::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -8px;
+  width: 100%;
+  height: 3px;
+  background: #27c5dc;
+}
+.header__btn {
+  grid-area: btn;
+  position: relative;
+}
+.header__span {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0em;
+  color: #fff;
+  text-align: center;
+}
+
+.nav {
+  background-color: #000;
+}
+.nav__wrapper {
+  max-width: 980px;
+  height: 40px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav__toggler {
+  display: none;
+  position: absolute;
+}
+.nav__toggler-label {
+  display: none;
+}
+.nav__list {
+  display: flex;
+}
+.nav__item {
+  margin-right: 10px;
+}
+.nav__link {
+  color: #fff;
+  font-size: 15px;
+  line-height: 18px;
+  padding: 10px;
+}
+.nav__section {
+  display: flex;
+}
+.nav__section .nav__link {
+  margin: 0 23px;
+}
+@media screen and (max-width: 900px) {
+  .nav__section .nav__link {
+    margin: 0 18px;
+  }
+}
+.nav__select {
+  width: 180px;
+  height: 40px;
+  background: #2b2b2b;
+  color: #fff;
+  font-family: "SFUIDisplay-Regular", sans-serif;
+  text-align: center;
+}
+@media screen and (max-width: 900px) {
+  .nav__list {
+    display: none;
+    flex-direction: column;
+  }
+  .nav__item {
+    margin: 5px 0;
+  }
+  .nav__link {
+    display: block;
+    padding: 10px 15px;
+  }
+  .nav__span, .nav__span::before, .nav__span::after {
+    display: block;
+    width: 20px;
+    height: 1px;
+    position: absolute;
+    background-color: #fff;
+    transition-duration: 1s;
+  }
+  .nav__span::before {
+    content: "";
+    top: -5px;
+  }
+  .nav__span::after {
+    content: "";
+    top: 5px;
+  }
+  .nav__toggler-label {
+    display: block;
+    position: relative;
+    margin: auto 0;
+    padding: 15px;
+    width: 20px;
+    cursor: pointer;
+  }
+  .nav__toggler:checked ~ .nav__toggler-label > .nav__span {
+    transform: rotate(45deg);
+  }
+  .nav__toggler:checked ~ .nav__toggler-label > .nav__span::before {
+    top: 0;
+    transform: rotate(0);
+  }
+  .nav__toggler:checked ~ .nav__toggler-label > .nav__span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  .nav__toggler:checked ~ .nav__list {
+    display: flex;
+    position: absolute;
+    top: 140px;
+    background: #2b2b2b;
+  }
+}
+
+.title {
+  height: 635px;
+  padding-top: 91px;
+  background-image: url(../images/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+@media screen and (max-width: 768px) {
+  .title {
+    height: 450px;
+    padding-top: 40px;
+  }
+}
+.title__wrapper {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 10px 15px;
+}
+.title__header {
+  text-transform: uppercase;
+  font-family: "SFUIDisplay-Bold";
+  font-size: 50px;
+  line-height: 60px;
+}
+@media screen and (max-width: 768px) {
+  .title__header {
+    font-size: 36px;
+    line-height: 48px;
+  }
+}
+.title__subtitle {
+  font-family: "SFUIDisplay-Ultralight";
+  font-size: 50px;
+  line-height: 60px;
+}
+@media screen and (max-width: 768px) {
+  .title__subtitle {
+    font-size: 36px;
+    line-height: 48px;
+  }
+}
+.title__description {
+  display: flex;
+  font-family: "SFUIDisplay-Thin";
+  font-size: 18px;
+  line-height: 22px;
+  margin: 20px 0;
+}
+.title__line {
+  width: 3px;
+  height: 85px;
+  background: #27c5dc;
+  border-radius: 10px;
+  margin-right: 30px;
+}
+.title__criteria {
+  display: flex;
+  font-family: "SFUIDisplay-Thin";
+  font-size: 18px;
+  line-height: 22px;
+}
+.title__icon {
+  margin-right: 20px;
+}
+
+.appeal {
+  position: relative;
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  overflow: hidden;
+}
+.appeal__text {
+  text-align: center;
+  font-family: "SFUIDisplay-Thin";
+  font-size: 18px;
+  line-height: 22px;
+  font-family: "SFUIDisplay-Regular";
+}
+.appeal__btn {
+  margin-top: 30px;
+  width: 203px;
+  height: 51px;
+  border: 2px solid #0066c5;
+  border-radius: 10px;
+  background: transparent;
+  font-family: "SFUIDisplay-Bold";
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+}
+.appeal__btn:hover {
+  background: #0066c5;
+  border: 1px solid #fff;
+  color: #fff;
+}
+.appeal__bcg-first {
+  position: absolute;
+  left: 0;
+  top: -265px;
+  z-index: -1;
+}
+.appeal__bcg-second {
+  position: absolute;
+  right: 0;
+  top: -245px;
+  z-index: -1;
+}
+
+.proposal__wrapper {
+  max-width: 1440px;
+  margin: 0 auto 130px;
+  padding: 10px 15px;
+}
+@media screen and (max-width: 768px) {
+  .proposal__wrapper {
+    margin: 0 auto 60px;
+  }
+}
+.proposal__header {
+  margin-bottom: 50px;
+  font-family: "SFUIDisplay-Bold";
+  font-size: 36px;
+  line-height: 43px;
+  text-transform: uppercase;
+  color: #000;
+}
+@media screen and (max-width: 768px) {
+  .proposal__header {
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+@media screen and (max-width: 1469px) {
+  .proposal__header {
+    text-align: center;
+  }
+}
+.proposal__catalog {
+  display: flex;
+  gap: 20px;
+}
+@media screen and (max-width: 1469px) {
+  .proposal__catalog {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+.proposal__card {
+  width: 466px;
+  height: 367px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  text-align: center;
+  font-family: "SFUIDisplay-Thin";
+  font-size: 18px;
+  line-height: 22px;
+  font-family: "SFUIDisplay-Regular";
+}
+.proposal__card img {
+  margin-bottom: 20px;
+}
+
+.program {
+  font-family: "SFUIDisplay-Thin";
+  font-size: 18px;
+  line-height: 22px;
+  font-family: "SFUIDisplay-Bold";
+  position: relative;
+  overflow: hidden;
+}
+.program__wrapper {
+  max-width: 1440px;
+  margin: 0 auto 130px;
+  padding: 10px 15px;
+  max-width: 1470px;
+}
+@media screen and (max-width: 768px) {
+  .program__wrapper {
+    margin: 0 auto 60px;
+  }
+}
+.program__bcg {
+  position: absolute;
+  right: 0;
+  top: 70px;
+  transform: rotate(-3.43deg);
+}
+.program__header {
+  margin-bottom: 50px;
+  font-family: "SFUIDisplay-Bold";
+  font-size: 36px;
+  line-height: 43px;
+  text-transform: uppercase;
+  color: #000;
+}
+@media screen and (max-width: 768px) {
+  .program__header {
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+@media screen and (max-width: 1469px) {
+  .program__header {
+    text-align: center;
+  }
+}
+.program__catalog {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+@media screen and (max-width: 1469px) {
+  .program__catalog {
+    justify-content: center;
+  }
+}
+.program__card {
+  width: 710px;
+  height: 361px;
+  position: relative;
+}
+.program__image {
+  width: 710px;
+  height: 284px;
+  display: block;
+}
+.program__age {
+  display: block;
+  width: 146px;
+  height: 57px;
+  line-height: 57px;
+  position: absolute;
+  right: 0;
+  top: 45px;
+  background: #fff;
+  border-radius: 10px 0px 0px 10px;
+  text-align: center;
+}
+.program__text {
+  width: 710px;
+  margin: 0;
+  line-height: 77px;
+  background: #F2F6F9;
+  border-radius: 0px 0px 30px 30px;
+  position: relative;
+  padding: 0 37px;
+}
+.program__link {
+  display: block;
+  width: 90px;
+  height: 77px;
+  background: #0066c5;
+  border-radius: 0px 0px 30px 0px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.program__link img {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.advantages__wrapper {
+  max-width: 1440px;
+  margin: 0 auto 130px;
+  padding: 10px 15px;
+}
+@media screen and (max-width: 768px) {
+  .advantages__wrapper {
+    margin: 0 auto 60px;
+  }
+}
+.advantages__header {
+  margin-bottom: 50px;
+  font-family: "SFUIDisplay-Bold";
+  font-size: 36px;
+  line-height: 43px;
+  text-transform: uppercase;
+  color: #000;
+}
+@media screen and (max-width: 768px) {
+  .advantages__header {
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .advantages__header {
+    text-align: center;
+  }
+}
+.advantages__catalog {
+  max-width: 1440px;
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 992px) {
+  .advantages__catalog {
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 50px 0;
+    justify-items: center;
+  }
+}
+.advantages__line {
+  width: 3px;
+  height: 178px;
+  background: #f2f6f9;
+}
+@media screen and (max-width: 992px) {
+  .advantages__line {
+    display: none;
+  }
+}
+.advantages__card {
+  width: 344px;
+  height: 178px;
+  position: relative;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+}
+.advantages__card img {
+  width: 130px;
+  height: 120px;
+}
+.advantages__text {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+}
+
+.main__consulting {
+  margin: 0 auto;
+}
+
+.consulting {
+  max-width: 2000px;
+  position: relative;
+  background-image: url(../images/photo0.png), url(../images/bcg5.png);
+  background-position: left top, right top;
+  background-repeat: no-repeat, no-repeat;
+}
+@media screen and (max-width: 1900px) {
+  .consulting {
+    background-position: left top, right -50px top;
+  }
+}
+@media screen and (max-width: 1800px) {
+  .consulting {
+    background-position: left top, right -150px top;
+  }
+}
+@media screen and (max-width: 1700px) {
+  .consulting {
+    background-position: left -258px top, right -150px top;
+  }
+}
+@media screen and (max-width: 1500px) {
+  .consulting {
+    background-size: auto, 900px;
+  }
+}
+@media screen and (max-width: 1500px) {
+  .consulting {
+    background-size: auto, 800px;
+    background-position: left -258px top, right -150px center;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .consulting {
+    background-image: url(../images/photo0.png);
+    background-position: left top;
+  }
+}
+@media screen and (max-width: 900px) {
+  .consulting {
+    background-image: none;
+  }
+}
+.consulting__wrapper {
+  max-width: 1440px;
+  margin: 0 auto 130px;
+  padding: 10px 15px;
+  margin-bottom: 140px;
+  height: 647px;
+}
+@media screen and (max-width: 768px) {
+  .consulting__wrapper {
+    margin: 0 auto 60px;
+  }
+}
+@media screen and (max-width: 1500px) {
+  .consulting__wrapper {
+    height: 550px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .consulting__wrapper {
+    height: 510px;
+  }
+}
+.consulting__header {
+  margin-bottom: 40px;
+  font-family: "SFUIDisplay-Bold";
+  font-size: 36px;
+  line-height: 43px;
+  text-transform: uppercase;
+  color: #000;
+}
+@media screen and (max-width: 768px) {
+  .consulting__header {
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+.consulting__image-first {
+  position: absolute;
+  left: 0;
+}
+.consulting__image-second {
+  position: absolute;
+  right: 1015px;
+  top: 196px;
+  z-index: -1;
+}
+.consulting__image-third {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1109px;
+  height: 647px;
+}
+.consulting__content {
+  width: 519px;
+  margin-left: 66px;
+}
+@media screen and (max-width: 1800px) {
+  .consulting__content {
+    margin-left: 140px;
+  }
+}
+@media screen and (max-width: 1700px) {
+  .consulting__content {
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .consulting__content {
+    margin-left: 300px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .consulting__content {
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+.consulting__text {
+  width: 503px;
+  font-family: "SFUIDisplay-Thin";
+  font-size: 18px;
+  line-height: 22px;
+  font-family: "SFUIDisplay-Regular";
+}
+.consulting__btn {
+  margin: 40px 0px;
+  width: 318px;
+  height: 51px;
+  background: #0066c5;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-family: "SFUIDisplay-Thin";
+  font-size: 18px;
+  line-height: 22px;
+  font-family: "SFUIDisplay-Bold";
+}
+@media screen and (max-width: 768px) {
+  .consulting__btn {
+    margin: 40px auto 0;
+  }
+}
+.consulting__btn:hover {
+  background: #fff;
+  border: 2px solid #0066c5;
+  color: #000;
+}
+
+.footer {
+  height: 178px;
+  padding: 18px;
+  background: #000;
+}
+.footer__text {
+  margin-bottom: 17px;
+  font-family: "SFUIDisplay-Thin";
+  font-size: 18px;
+  line-height: 22px;
+  font-family: "SFUIDisplay-Bold";
+  color: #fff;
+  text-align: center;
+}
+.footer__links {
+  margin: 0 auto 25px;
+  width: 155px;
+  display: flex;
+  justify-content: space-between;
+}
+.footer__link {
+  width: 42px;
+  height: 42px;
+  position: relative;
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+.footer__link-first {
+  border-color: #27c5dc;
+}
+.footer__link img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.footer__copyright {
+  font-family: "SFUIDisplay-Regular";
+  font-size: 11px;
+  line-height: 13px;
+  text-align: center;
+  color: #fff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.body__header, .body__main, .body__footer {
+  margin: 0 auto;
+}
+
+.header, .main, .footer {
+  max-width: 2000px;
+}
+
+/*# sourceMappingURL=style.css.map */

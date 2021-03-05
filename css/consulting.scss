@@ -1,0 +1,132 @@
+.main__consulting {
+  margin: 0 auto;
+}
+
+.consulting {
+  max-width: 2000px;
+  position: relative;
+  background-image: url(../images/photo0.png), url(../images/bcg5.png);
+  background-position: left top, right top;
+  background-repeat: no-repeat, no-repeat;
+
+  @media screen and (max-width: 1900px) {
+    background-position: left top, right -50px top;
+  }
+
+  @media screen and (max-width: 1800px) {
+    background-position: left top, right -150px top;
+  }
+
+  @media screen and (max-width: 1700px) {
+    background-position: left -258px top, right -150px top;
+  }
+
+  @media screen and (max-width: 1500px) {
+    background-size: auto, 900px;
+  }
+
+  @media screen and (max-width: 1500px) {
+    background-size: auto, 800px;
+    background-position: left -258px top, right -150px center;
+  }
+
+  @media screen and (max-width: 1200px) {
+    background-image: url(../images/photo0.png);
+    background-position: left top;
+  }
+
+  @media screen and (max-width: 900px) {
+    background-image: none;
+  }
+  
+  &__wrapper {
+    @include wrapper;
+    margin-bottom: 140px;
+    height: 647px;
+
+    @media screen and (max-width: 1500px) {
+      height: 550px;
+    }
+
+    @media screen and (max-width: 768px) {
+      height: 510px;
+    }
+  }
+
+  &__header {
+    margin-bottom: 40px;
+    @include headersText;
+  }
+
+  &__image {
+    &-first {
+      position: absolute;
+      left: 0;
+    }
+
+    &-second {
+      position: absolute;
+      right: 1015px;
+      top: 196px;
+      z-index: -1;
+    }
+
+    &-third {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 1109px;
+      height: 647px;
+    }
+  }
+
+  &__content {
+    width: 519px;
+    margin-left: 66px;
+
+    @media screen and (max-width: 1800px) {
+      margin-left: 140px;
+    }
+
+    @media screen and (max-width: 1700px) {
+      margin-left: 0;
+    }
+
+    @media screen and (max-width: 1200px) {
+      margin-left: 300px;
+    }
+
+    @media screen and (max-width: 900px) {
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+
+  &__text {
+    width: 503px;
+    @include text;
+    font-family: "SFUIDisplay-Regular";
+  }
+
+  &__btn {
+    margin: 40px 0px;
+    width: 318px;
+    height: 51px;
+    background: $blue;
+    border: none;
+    border-radius: 10px;
+    color: $white;
+    @include text;
+    font-family: "SFUIDisplay-Bold";
+
+    @media screen and (max-width: 768px) {
+      margin: 40px auto 0;
+    }
+
+    &:hover {
+      background: $white;
+      border: 2px solid $blue;
+      color: $black;
+    }
+  }
+}

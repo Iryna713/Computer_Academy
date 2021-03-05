@@ -1,0 +1,59 @@
+.advantages {
+  &__wrapper {
+    @include wrapper;
+  }
+
+  &__header {
+    margin-bottom: 50px;
+    @include headersText;
+
+    @media screen and (max-width: 992px) {
+      text-align: center;
+    }
+  }
+
+  &__catalog {
+    max-width: 1440px;
+    display: flex;
+    justify-content: space-between;
+
+    @media screen and (max-width: 992px) {
+      margin: 0 auto;
+      display: grid;
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 50px 0;
+      justify-items: center;
+    }
+  }
+  
+  &__line {
+    width: 3px;
+    height: 178px;
+    background: #f2f6f9;
+
+    @media screen and (max-width: 992px) {
+      display: none;
+    }
+  }
+
+  &__card {
+    width: 344px;
+    height: 178px;
+    position: relative;
+    background: $white;
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 130px;
+      height: 120px;
+    }
+  }
+
+  &__text {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+  }
+}

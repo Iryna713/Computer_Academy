@@ -1,0 +1,51 @@
+.appeal {
+  position: relative;
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $black;
+  overflow: hidden;
+
+  &__text {
+    text-align: center;
+    @include text;
+    font-family: "SFUIDisplay-Regular";
+  }
+
+  &__btn {
+    margin-top: 30px;
+    width: 203px;
+    height: 51px;
+    border: 2px solid $blue;
+    border-radius: 10px;
+    background: transparent;
+    font-family: "SFUIDisplay-Bold";
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+
+    &:hover {
+      background: $blue;
+      border: 1px solid $white;
+      color: $white;
+    }
+  }
+
+  &__bcg {
+    &-first {
+      position: absolute;
+      left: 0;
+      top: -265px;
+      z-index: -1;
+    }
+
+    &-second {
+      position: absolute;
+      right: 0;
+      top: -245px;
+      z-index: -1;
+    }
+  }
+}
