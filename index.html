@@ -21,6 +21,23 @@
           <div class="header__contact">
             <a href="mailto:+70955570650" class="header__number">+7 (095) 557-06-50</a>
             
+            <select class="header__langSelector header__lang header__lang-active">
+              <option value="cz" class="header__lang">cz</option>
+              <option value="kh" class="header__lang">kh</option>
+              <option value="ua" class="header__lang">ua</option>
+              <option value="ro" class="header__lang">ro</option>
+              <option value="ru" class="header__lang" selected>ru</option>
+              <option value="en" class="header__lang">en</option>
+              <option value="pt" class="header__lang">pt</option>
+              <option value="est" class="header__lang">est</option>
+              <option value="sk" class="header__lang">sk</option>
+              <option value="by" class="header__lang">by</option>
+              <option value="bg" class="header__lang">bg</option>
+              <option value="ge" class="header__lang">ge</option>
+              <option value="az" class="header__lang">az</option>
+              <option value="kz" class="header__lang">kz</option>
+            </select>
+
             <ul class="header__languages">
               <li>
                 <a href="#" class="header__lang">cz</a>
@@ -66,7 +83,7 @@
               </li>
             </ul>
   
-            <a href="#" class="header__btn">
+            <a href="mailto:+70955570650" class="header__btn">
               <img src="images/Vector 1.svg">
               <span class="header__span">Записаться <br> на консультацию</span>
             </a>
@@ -76,6 +93,17 @@
 
       <nav class="nav header__nav">
         <div class="nav__wrapper">
+
+          <input
+            type="checkbox"
+            class="nav__toggler"
+            id="nav-toggler"
+          >
+
+          <label class="nav__toggler-label" for="nav-toggler">
+            <span class="nav__span"></span>
+          </label>
+
           <ul class="nav__list">
             <li class="nav__item">
               <a class="nav__link" href="#education">Обучение</a>
@@ -86,7 +114,7 @@
             </li>
   
             <li class="nav__item">
-              <a class="nav__link" href="#tests">Тесты</a>
+              <a class="nav__link" href="#contacts">Тесты</a>
             </li>
   
             <li class="nav__item">
@@ -186,7 +214,7 @@
         </div>
       </div>
 
-      <div class="program main__program">
+      <div class="program main__program" id="education">
         <div class="program__wrapper">
           <h2 class="program__header">
             программа
@@ -202,7 +230,7 @@
                 <p class="program__name">
                   STEP IT BOOTCAMP — интенсивная подготовка
                 </p>
-                <a href="#" class="program__link">
+                <a href="#contacts" class="program__link">
                   <img src="images/Arrow.svg" alt="arrow" class="program__arrow">
                 </a>
               </div>
@@ -215,7 +243,7 @@
                 <p class="program__name">
                   Курс IT Project Management
                 </p>
-                <a href="#" class="program__link">
+                <a href="#contacts" class="program__link">
                   <img src="images/Arrow.svg" alt="arrow" class="program__arrow">
                 </a>
               </div>
@@ -228,7 +256,7 @@
                 <p class="program__name">
                   Курс цифровой фотографии
                 </p>
-                <a href="#" class="program__link">
+                <a href="#contacts" class="program__link">
                   <img src="images/Arrow.svg" alt="arrow" class="program__arrow">
                 </a>
               </div>
@@ -281,49 +309,31 @@
         </div>
       </div>
 
-      <div class="consulting main__consulting">
+      <div class="consulting main__consulting" id="contacts">
         <div class="consulting__wrapper">
-          <!-- <img
-          src="images/photo0.png"
-          alt="photo of woman"
-          class="consulting__image-first"
-        > -->
-
-        <div class="consulting__content">
-          <h2 class="consulting__header">
-            Получить консультацию<br>
-            по интенсивным<br>
-            программам
-          </h2>
-  
-          <p class="consulting__text">
-            Интенсивные программы STEP IT Academy предназначены для получения
-            основополагающих знаний и навыков, либо для усовершенствования
-            знаний в различных областях сферы информационных технологий.
-            Каждый желающий может найти подходящую программу для своего уровня
-            знаний и подготовки.
-            <br><br><br>
-            Наши консультанты с удовольствием дадут вам полноценную информацию
-            о всех интенсивных программах Академии и помогут с выбором
-            подходящего курса.
-          </p>
-  
-          <button type="button" class="consulting__btn">
-            Получить консультацию
-          </button>
-        </div>
-
-        <!-- <img
-          src="images/UnionDots.svg"
-          alt="dots"
-          class="consulting__image-second"
-        > -->
-
-        <!-- <img
-          src="images/photo1.png"
-          alt="photo of working people"
-          class="consulting__image-third"
-        > -->
+          <div class="consulting__content">
+            <h2 class="consulting__header">
+              Получить консультацию<br>
+              по интенсивным<br>
+              программам
+            </h2>
+    
+            <p class="consulting__text">
+              Интенсивные программы STEP IT Academy предназначены для получения
+              основополагающих знаний и навыков, либо для усовершенствования
+              знаний в различных областях сферы информационных технологий.
+              Каждый желающий может найти подходящую программу для своего уровня
+              знаний и подготовки.
+              <br><br><br>
+              Наши консультанты с удовольствием дадут вам полноценную информацию
+              о всех интенсивных программах Академии и помогут с выбором
+              подходящего курса.
+            </p>
+    
+            <button type="button" class="consulting__btn">
+              Получить консультацию
+            </button>
+          </div>
         </div>
       </div>
     </main>
@@ -333,7 +343,7 @@
         Следите за нами в социальных сетях:
       </p>
 
-      <div class="footer__links">
+      <div class="footer__links" id="events">
         <a href="https://www.facebook.com">
           <div class="footer__link footer__link-first">
             <img src="images/facebook.svg" alt="facebook">

@@ -29,7 +29,7 @@ a {
   text-decoration: none;
 }
 
-button {
+button, select {
   outline: none;
   cursor: pointer;
 }
@@ -58,13 +58,25 @@ button {
   font-family: "SFUIDisplay-Regular", sans-serif;
 }
 .header__wrapper {
-  width: 980px;
+  max-width: 980px;
+  padding: 15px 0 0 15px;
   margin: 0 auto;
   height: 100px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.header__langSelector {
+  display: none;
+  width: 50px;
+  justify-self: end;
+  border: 1px solid #2b2b2b;
+}
+@media screen and (max-width: 980px) {
+  .header__langSelector {
+    display: block;
+  }
 }
 .header__bcg-first {
   position: absolute;
@@ -98,11 +110,21 @@ button {
   color: #000;
   height: 31px;
 }
+@media screen and (max-width: 768px) {
+  .header__number {
+    font-size: 18px;
+  }
+}
 .header__languages {
   grid-area: lang;
   display: grid;
   grid-template-columns: repeat(14, max-content);
   grid-gap: 12px;
+}
+@media screen and (max-width: 980px) {
+  .header__languages {
+    display: none;
+  }
 }
 .header__lang {
   color: #fff;
@@ -123,7 +145,7 @@ button {
   bottom: -8px;
   width: 100%;
   height: 3px;
-  background: #27C5DC;
+  background: #27c5dc;
 }
 .header__btn {
   grid-area: btn;
@@ -146,36 +168,104 @@ button {
   background-color: #000;
 }
 .nav__wrapper {
-  width: 980px;
+  max-width: 980px;
   height: 40px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+.nav__toggler {
+  display: none;
+  position: absolute;
+}
+.nav__toggler-label {
+  display: none;
+}
 .nav__list {
   display: flex;
 }
 .nav__item {
-  margin-right: 18px;
+  margin-right: 10px;
 }
 .nav__link {
   color: #fff;
   font-size: 15px;
   line-height: 18px;
+  padding: 10px;
+}
+.nav__section {
+  display: flex;
 }
 .nav__section .nav__link {
-  margin: 0 31px;
+  margin: 0 23px;
+}
+@media screen and (max-width: 900px) {
+  .nav__section .nav__link {
+    margin: 0 18px;
+  }
 }
 .nav__select {
   width: 180px;
   height: 40px;
-  border-radius: 0%;
-  outline: none;
-  background: #2B2B2B;
+  background: #2b2b2b;
   color: #fff;
   font-family: "SFUIDisplay-Regular", sans-serif;
   text-align: center;
+}
+@media screen and (max-width: 900px) {
+  .nav__list {
+    display: none;
+    flex-direction: column;
+  }
+  .nav__item {
+    margin: 5px 0;
+  }
+  .nav__link {
+    display: block;
+    padding: 10px 15px;
+  }
+  .nav__span, .nav__span::before, .nav__span::after {
+    display: block;
+    width: 20px;
+    height: 1px;
+    position: absolute;
+    background-color: #fff;
+    transition-duration: 1s;
+  }
+  .nav__span::before {
+    content: "";
+    top: -5px;
+  }
+  .nav__span::after {
+    content: "";
+    top: 5px;
+  }
+  .nav__toggler-label {
+    display: block;
+    position: relative;
+    margin: auto 0;
+    padding: 15px;
+    width: 20px;
+    cursor: pointer;
+  }
+  .nav__toggler:checked ~ .nav__toggler-label > .nav__span {
+    transform: rotate(45deg);
+  }
+  .nav__toggler:checked ~ .nav__toggler-label > .nav__span::before {
+    top: 0;
+    transform: rotate(0);
+  }
+  .nav__toggler:checked ~ .nav__toggler-label > .nav__span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  .nav__toggler:checked ~ .nav__list {
+    display: flex;
+    position: absolute;
+    top: 140px;
+    background: #2b2b2b;
+  }
 }
 
 .title {
@@ -231,7 +321,7 @@ button {
 .title__line {
   width: 3px;
   height: 85px;
-  background: #27C5DC;
+  background: #27c5dc;
   border-radius: 10px;
   margin-right: 30px;
 }
@@ -253,6 +343,7 @@ button {
   justify-content: center;
   align-items: center;
   color: #000;
+  overflow: hidden;
 }
 .appeal__text {
   text-align: center;
@@ -265,13 +356,18 @@ button {
   margin-top: 30px;
   width: 203px;
   height: 51px;
-  border: 2px solid #0A6DC9;
+  border: 2px solid #0066c5;
   border-radius: 10px;
   background: transparent;
   font-family: "SFUIDisplay-Bold";
   font-size: 18px;
   line-height: 21px;
   text-align: center;
+}
+.appeal__btn:hover {
+  background: #0066c5;
+  border: 1px solid #fff;
+  color: #fff;
 }
 .appeal__bcg-first {
   position: absolute;
@@ -431,7 +527,7 @@ button {
   display: block;
   width: 90px;
   height: 77px;
-  background: #0066C5;
+  background: #0066c5;
   border-radius: 0px 0px 30px 0px;
   position: absolute;
   right: 0;
@@ -654,7 +750,8 @@ button {
   margin: 40px 0px;
   width: 318px;
   height: 51px;
-  background: #0066C5;
+  background: #0066c5;
+  border: none;
   border-radius: 10px;
   color: #fff;
   font-family: "SFUIDisplay-Thin";
@@ -666,6 +763,11 @@ button {
   .consulting__btn {
     margin: 40px auto 0;
   }
+}
+.consulting__btn:hover {
+  background: #fff;
+  border: 2px solid #0066c5;
+  color: #000;
 }
 
 .footer {
@@ -696,7 +798,7 @@ button {
   border-radius: 50%;
 }
 .footer__link-first {
-  border-color: #27C5DC;
+  border-color: #27c5dc;
 }
 .footer__link img {
   position: absolute;
@@ -710,6 +812,10 @@ button {
   line-height: 13px;
   text-align: center;
   color: #fff;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .body__header, .body__main, .body__footer {

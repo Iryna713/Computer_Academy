@@ -113,6 +113,7 @@
     width: 318px;
     height: 51px;
     background: $blue;
+    border: none;
     border-radius: 10px;
     color: $white;
     @include text;
@@ -120,6 +121,12 @@
 
     @media screen and (max-width: 768px) {
       margin: 40px auto 0;
+    }
+
+    &:hover {
+      background: $white;
+      border: 2px solid $blue;
+      color: $black;
     }
   }
 }
