@@ -6,19 +6,35 @@
   &__header {
     margin-bottom: 50px;
     @include headersText;
+
+    @media screen and (max-width: 992px) {
+      text-align: center;
+    }
   }
 
   &__catalog {
-    width: 1440px;
-    height: 178px;
+    max-width: 1440px;
     display: flex;
     justify-content: space-between;
+
+    @media screen and (max-width: 992px) {
+      margin: 0 auto;
+      display: grid;
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 50px 0;
+      justify-items: center;
+    }
   }
   
   &__line {
     width: 3px;
     height: 178px;
     background: #f2f6f9;
+
+    @media screen and (max-width: 992px) {
+      display: none;
+    }
   }
 
   &__card {

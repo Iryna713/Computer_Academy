@@ -182,11 +182,21 @@ button {
   height: 635px;
   padding-top: 91px;
   background-image: url(../images/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   color: #fff;
 }
+@media screen and (max-width: 768px) {
+  .title {
+    height: 450px;
+    padding-top: 40px;
+  }
+}
 .title__wrapper {
-  width: 980px;
+  max-width: 980px;
   margin: 0 auto;
+  padding: 10px 15px;
 }
 .title__header {
   text-transform: uppercase;
@@ -194,10 +204,22 @@ button {
   font-size: 50px;
   line-height: 60px;
 }
+@media screen and (max-width: 768px) {
+  .title__header {
+    font-size: 36px;
+    line-height: 48px;
+  }
+}
 .title__subtitle {
   font-family: "SFUIDisplay-Ultralight";
   font-size: 50px;
   line-height: 60px;
+}
+@media screen and (max-width: 768px) {
+  .title__subtitle {
+    font-size: 36px;
+    line-height: 48px;
+  }
 }
 .title__description {
   display: flex;
@@ -265,8 +287,14 @@ button {
 }
 
 .proposal__wrapper {
-  width: max-content;
+  max-width: 1440px;
   margin: 0 auto 130px;
+  padding: 10px 15px;
+}
+@media screen and (max-width: 768px) {
+  .proposal__wrapper {
+    margin: 0 auto 60px;
+  }
 }
 .proposal__header {
   margin-bottom: 50px;
@@ -276,9 +304,26 @@ button {
   text-transform: uppercase;
   color: #000;
 }
+@media screen and (max-width: 768px) {
+  .proposal__header {
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+@media screen and (max-width: 1469px) {
+  .proposal__header {
+    text-align: center;
+  }
+}
 .proposal__catalog {
   display: flex;
   gap: 20px;
+}
+@media screen and (max-width: 1469px) {
+  .proposal__catalog {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 .proposal__card {
   width: 466px;
@@ -303,10 +348,18 @@ button {
   line-height: 22px;
   font-family: "SFUIDisplay-Bold";
   position: relative;
+  overflow: hidden;
 }
 .program__wrapper {
   max-width: 1440px;
   margin: 0 auto 130px;
+  padding: 10px 15px;
+  max-width: 1470px;
+}
+@media screen and (max-width: 768px) {
+  .program__wrapper {
+    margin: 0 auto 60px;
+  }
 }
 .program__bcg {
   position: absolute;
@@ -322,10 +375,26 @@ button {
   text-transform: uppercase;
   color: #000;
 }
+@media screen and (max-width: 768px) {
+  .program__header {
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+@media screen and (max-width: 1469px) {
+  .program__header {
+    text-align: center;
+  }
+}
 .program__catalog {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+}
+@media screen and (max-width: 1469px) {
+  .program__catalog {
+    justify-content: center;
+  }
 }
 .program__card {
   width: 710px;
@@ -335,6 +404,7 @@ button {
 .program__image {
   width: 710px;
   height: 284px;
+  display: block;
 }
 .program__age {
   display: block;
@@ -349,8 +419,8 @@ button {
   text-align: center;
 }
 .program__text {
-  width: 709px;
-  height: 77px;
+  width: 710px;
+  margin: 0;
   line-height: 77px;
   background: #F2F6F9;
   border-radius: 0px 0px 30px 30px;
@@ -368,6 +438,7 @@ button {
   bottom: 0;
 }
 .program__link img {
+  display: block;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -377,6 +448,12 @@ button {
 .advantages__wrapper {
   max-width: 1440px;
   margin: 0 auto 130px;
+  padding: 10px 15px;
+}
+@media screen and (max-width: 768px) {
+  .advantages__wrapper {
+    margin: 0 auto 60px;
+  }
 }
 .advantages__header {
   margin-bottom: 50px;
@@ -386,16 +463,41 @@ button {
   text-transform: uppercase;
   color: #000;
 }
+@media screen and (max-width: 768px) {
+  .advantages__header {
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .advantages__header {
+    text-align: center;
+  }
+}
 .advantages__catalog {
-  width: 1440px;
-  height: 178px;
+  max-width: 1440px;
   display: flex;
   justify-content: space-between;
+}
+@media screen and (max-width: 992px) {
+  .advantages__catalog {
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 50px 0;
+    justify-items: center;
+  }
 }
 .advantages__line {
   width: 3px;
   height: 178px;
   background: #f2f6f9;
+}
+@media screen and (max-width: 992px) {
+  .advantages__line {
+    display: none;
+  }
 }
 .advantages__card {
   width: 344px;
@@ -422,12 +524,68 @@ button {
 .consulting {
   max-width: 2000px;
   position: relative;
+  background-image: url(../images/photo0.png), url(../images/bcg5.png);
+  background-position: left top, right top;
+  background-repeat: no-repeat, no-repeat;
+}
+@media screen and (max-width: 1900px) {
+  .consulting {
+    background-position: left top, right -50px top;
+  }
+}
+@media screen and (max-width: 1800px) {
+  .consulting {
+    background-position: left top, right -150px top;
+  }
+}
+@media screen and (max-width: 1700px) {
+  .consulting {
+    background-position: left -258px top, right -150px top;
+  }
+}
+@media screen and (max-width: 1500px) {
+  .consulting {
+    background-size: auto, 900px;
+  }
+}
+@media screen and (max-width: 1500px) {
+  .consulting {
+    background-size: auto, 800px;
+    background-position: left -258px top, right -150px center;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .consulting {
+    background-image: url(../images/photo0.png);
+    background-position: left top;
+  }
+}
+@media screen and (max-width: 900px) {
+  .consulting {
+    background-image: none;
+  }
 }
 .consulting__wrapper {
   max-width: 1440px;
   margin: 0 auto 130px;
+  padding: 10px 15px;
   margin-bottom: 140px;
   height: 647px;
+}
+@media screen and (max-width: 768px) {
+  .consulting__wrapper {
+    margin: 0 auto 60px;
+  }
+}
+@media screen and (max-width: 1500px) {
+  .consulting__wrapper {
+    height: 550px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .consulting__wrapper {
+    height: 510px;
+  }
 }
 .consulting__header {
   margin-bottom: 40px;
@@ -436,6 +594,12 @@ button {
   line-height: 43px;
   text-transform: uppercase;
   color: #000;
+}
+@media screen and (max-width: 768px) {
+  .consulting__header {
+    font-size: 24px;
+    line-height: 36px;
+  }
 }
 .consulting__image-first {
   position: absolute;
@@ -458,6 +622,27 @@ button {
   width: 519px;
   margin-left: 66px;
 }
+@media screen and (max-width: 1800px) {
+  .consulting__content {
+    margin-left: 140px;
+  }
+}
+@media screen and (max-width: 1700px) {
+  .consulting__content {
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .consulting__content {
+    margin-left: 300px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .consulting__content {
+    margin: 0 auto;
+    text-align: center;
+  }
+}
 .consulting__text {
   width: 503px;
   font-family: "SFUIDisplay-Thin";
@@ -476,6 +661,11 @@ button {
   font-size: 18px;
   line-height: 22px;
   font-family: "SFUIDisplay-Bold";
+}
+@media screen and (max-width: 768px) {
+  .consulting__btn {
+    margin: 40px auto 0;
+  }
 }
 
 .footer {
@@ -520,6 +710,14 @@ button {
   line-height: 13px;
   text-align: center;
   color: #fff;
+}
+
+.body__header, .body__main, .body__footer {
+  margin: 0 auto;
+}
+
+.header, .main, .footer {
+  max-width: 2000px;
 }
 
 /*# sourceMappingURL=style.css.map */

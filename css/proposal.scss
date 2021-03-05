@@ -1,18 +1,26 @@
 .proposal {
 
   &__wrapper {
-    width: max-content;
-    margin: 0 auto 130px;
+    @include wrapper;
   }
 
   &__header {
     margin-bottom: 50px;
     @include headersText;
+
+    @media screen and (max-width: 1469px) {
+      text-align: center;
+    }
   }
 
   &__catalog {
     display: flex;
     gap: 20px;
+
+    @media screen and (max-width: 1469px) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
   }
 
   &__card {

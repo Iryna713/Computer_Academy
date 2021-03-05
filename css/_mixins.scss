@@ -7,6 +7,11 @@
 @mixin titleText {
   font-size: 50px;
   line-height: 60px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 36px;
+    line-height: 48px;
+  }
 }
 
 @mixin text {
@@ -21,9 +26,19 @@
   line-height: 43px;
   text-transform: uppercase;
   color: $black;
+
+  @media screen and (max-width: 768px) {
+    font-size: 24px;
+    line-height: 36px;
+  }
 }
 
 @mixin wrapper {
   max-width: 1440px;
   margin: 0 auto 130px;
+  padding: 10px 15px;
+
+  @media screen and (max-width: 768px) {
+    margin: 0 auto 60px;
+  }
 }

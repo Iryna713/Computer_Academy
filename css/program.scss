@@ -2,9 +2,11 @@
   @include text;
   font-family: "SFUIDisplay-Bold";
   position: relative;
+  overflow: hidden;
 
   &__wrapper {
     @include wrapper;
+    max-width: 1470px;
   }
 
   &__bcg {
@@ -17,12 +19,20 @@
   &__header {
     margin-bottom: 50px;
     @include headersText;
+
+    @media screen and (max-width: 1469px) {
+      text-align: center;
+    }
   }
   
   &__catalog {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+
+    @media screen and (max-width: 1469px) {
+      justify-content: center;
+    }
   }
   
   &__card {
@@ -30,10 +40,11 @@
     height: 361px;
     position: relative;
   }
-
+  
   &__image {
     width: 710px;
     height: 284px;
+    display: block;
   }
 
   &__age {
@@ -50,8 +61,8 @@
   }
 
   &__text {
-    width: 709px;
-    height: 77px;
+    width: 710px;
+    margin: 0;
     line-height: 77px;
     background: #F2F6F9;
     border-radius: 0px 0px 30px 30px;
@@ -70,6 +81,7 @@
     bottom: 0;
 
     img {
+      display: block;
       position: absolute;
       top: 50%;
       left: 50%;
